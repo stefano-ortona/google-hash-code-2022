@@ -34,10 +34,16 @@ public class Project {
      */
 
     public int getScoreByCurrentTime(int currentTime) {
-        if (startDay == null) {
-            return 0;
+    	int endTime = currentTime + this.duration;
+        if ( endTime < this.bestBeforeDay) {
+            return score;
         }
-        return 0;
+        int difference = endTime - this.bestBeforeDay + 1;
+        int newScore = score - difference;
+        if (newScore < 0) {
+        	return 0;
+        }
+        return newScore;
     }
 
     public int getFinalScore() {
