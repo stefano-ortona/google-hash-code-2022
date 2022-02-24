@@ -11,6 +11,9 @@ public class SolutionContainer {
     }
 
     public int getScore() {
+        for (Project project : SOLUTION_PROJECT_LIST) {
+
+        }
         return 0;
     }
 

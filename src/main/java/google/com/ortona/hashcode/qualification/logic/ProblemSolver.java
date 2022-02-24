@@ -8,16 +8,24 @@ import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import google.com.ortona.hashcode.qualification.model.SolutionContainer;
 
 public class ProblemSolver {
-	private static Logger LOG = LoggerFactory.getLogger(ProblemSolver.class);
-	
-	public SolutionContainer solve(ProblemContainer pC) {
-		SolutionContainer sC = new SolutionContainer();
-		
-		return sC;
-	}
+    private static Logger LOG = LoggerFactory.getLogger(ProblemSolver.class);
 
-	public static void main(String[] args) {
-		LOG.info("Hello World!");
-	}
+    public SolutionContainer solve(ProblemContainer pC) {
+        SolutionContainer sC = new SolutionContainer();
+
+        // fino alla fine dei problemi
+
+		int t = 0;
+        while (!pC.PROJECT_LIST.isEmpty()) {
+
+			t++;
+        }
+
+        return sC;
+    }
+
+    public static void main(String[] args) {
+        LOG.info("Hello World!");
+    }
 
 }

@@ -10,14 +10,36 @@ public class Project {
 
     private int bestBeforeDay;
 
+    private int score;
+
     private List<People> contributorList;
 
+    private Integer startDay = null;
 
-    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay) {
+
+    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay, int score, List<People> contributorList, int startDay) {
         this.name = name;
         this.skillRequiredList = skillRequiredList;
         this.bestBeforeDay = bestBeforeDay;
+        this.score = score;
+        this.contributorList = contributorList;
+        this.startDay = startDay;
     }
+
+
+    /*
+     * Utility
+     */
+
+    public int getFinalScore() {
+        if (startDay == null) {
+            return 0;
+        }
+        return 0;
+    }
+
+    // ------
+
 
     public String getName() {
         return name;
@@ -51,13 +73,31 @@ public class Project {
         this.contributorList = contributorList;
     }
 
+    public int getStartDay() {
+        return startDay;
+    }
+
+    public void setStartDay(int startDay) {
+        this.startDay = startDay;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
                 "name='" + name + '\'' +
                 ", skillRequiredList=" + skillRequiredList +
                 ", bestBeforeDay=" + bestBeforeDay +
+                ", score=" + score +
                 ", contributorList=" + contributorList +
+                ", startDay=" + startDay +
                 '}';
     }
 
