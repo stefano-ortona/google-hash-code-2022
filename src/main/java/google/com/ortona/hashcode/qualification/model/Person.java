@@ -2,7 +2,7 @@ package google.com.ortona.hashcode.qualification.model;
 
 import java.util.List;
 
-public class People {
+public class Person {
 
     private String name;
 
@@ -11,7 +11,7 @@ public class People {
     private int nextAvailableTime = 0;
 
 
-    public People(String name, List<Skill> skillList) {
+    public Person(String name, List<Skill> skillList) {
         this.name = name;
         this.skillList = skillList;
     }

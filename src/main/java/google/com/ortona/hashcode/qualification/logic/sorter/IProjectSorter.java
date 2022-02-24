@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IProjectSorter {
 
-    public List<Project> sortProject(List<Project> projectList);
+    public void sortProject(List<Project> projectList);
 
 }

@@ -7,8 +7,8 @@ import java.util.List;
 public class SimpleProjectSorter implements IProjectSorter {
 
     @Override
-    public List<Project> sortProject(List<Project> projectList) {
-        return null;
+    public void sortProject(List<Project> projectList) {
+
     }
 
 }

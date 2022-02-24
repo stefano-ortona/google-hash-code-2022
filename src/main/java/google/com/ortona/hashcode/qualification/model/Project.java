@@ -12,12 +12,12 @@ public class Project {
 
     private int score;
 
-    private List<People> contributorList;
+    private List<Person> contributorList;
 
     private Integer startDay = null;
 
 
-    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay, int score, List<People> contributorList, int startDay) {
+    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay, int score, List<Person> contributorList, int startDay) {
         this.name = name;
         this.skillRequiredList = skillRequiredList;
         this.bestBeforeDay = bestBeforeDay;
@@ -65,11 +65,11 @@ public class Project {
         this.bestBeforeDay = bestBeforeDay;
     }
 
-    public List<People> getContributorList() {
+    public List<Person> getContributorList() {
         return contributorList;
     }
 
-    public void setContributorList(List<People> contributorList) {
+    public void setContributorList(List<Person> contributorList) {
         this.contributorList = contributorList;
     }
 
