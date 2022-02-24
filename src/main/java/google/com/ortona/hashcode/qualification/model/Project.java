@@ -33,11 +33,15 @@ public class Project {
      * Utility
      */
 
-    public int getFinalScore() {
+    public int getScoreByCurrentTime(int currentTime) {
         if (startDay == null) {
             return 0;
         }
         return 0;
+    }
+
+    public int getFinalScore() {
+        return getScoreByCurrentTime(startDay);
     }
 
     public boolean isCritical(int currentTime) {
@@ -79,7 +83,7 @@ public class Project {
         this.contributorList = contributorList;
     }
 
-    public int getStartDay() {
+    public Integer getStartDay() {
         return startDay;
     }
 

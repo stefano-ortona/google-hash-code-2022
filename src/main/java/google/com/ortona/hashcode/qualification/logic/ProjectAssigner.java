@@ -13,6 +13,7 @@ public class ProjectAssigner {
     public boolean assignToProject(Project project, Map<String, Person> peopleList) {
         // fare update al nextAvailableTime e modificare il project
         // TODO: 24/02/2022 scegliere persone per progetto
+
         return false;
     }
 

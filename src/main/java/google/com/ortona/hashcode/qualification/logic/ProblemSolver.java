@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import google.com.ortona.hashcode.qualification.model.SolutionContainer;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class ProblemSolver {
@@ -49,6 +50,18 @@ public class ProblemSolver {
 
     private void removeImpossibleProjects(List<Project> projectList) {
 		// rimuove anche i progetti già assegnati
+        Iterator<Project> it = projectList.iterator();
+        while (it.hasNext()) {
+            Project project = it.next();
+
+            // if already assigned
+            if (project.getStartDay() != null) {
+                projectList.remove(project);
+            }
+
+            // if no value
+            if (project.getBestBeforeDay())
+        }
 	}
 
 
