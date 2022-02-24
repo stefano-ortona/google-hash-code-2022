@@ -45,7 +45,7 @@ public class Project {
     }
 
     public boolean isCritical(int currentTime) {
-        return currentTime + ProblemSolver.PROJECT_TIME_BUFFER >= bestBeforeDay;
+        return currentTime + duration + ProblemSolver.PROJECT_TIME_BUFFER >= bestBeforeDay;
     }
 
     // ------
