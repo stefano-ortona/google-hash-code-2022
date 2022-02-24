@@ -15,6 +15,8 @@ import java.util.List;
 public class ProblemSolver {
     private static Logger LOG = LoggerFactory.getLogger(ProblemSolver.class);
 
+    public static int PROJECT_TIME_BUFFER = 30;
+
     private IProjectSorter PROJECT_SORTER = new SimpleProjectSorter();
 	private ProjectAssigner PROJECT_ASSIGNER = new ProjectAssigner();
 

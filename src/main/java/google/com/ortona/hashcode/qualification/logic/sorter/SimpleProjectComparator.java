@@ -15,8 +15,13 @@ public class SimpleProjectComparator implements Comparator<Project> {
 
 
     @Override
-    public int compare(Project o1, Project o2) {
+    public int compare(Project p1, Project p2) {
         // TODO: 24/02/2022
+
+        if (p1.isCritical(currentTime) != p2.isCritical(currentTime)) {
+            if (p1.isCritical(currentTime)) return -1;
+            else return 1;
+        }
 
         /*
          t+delta
@@ -25,6 +30,16 @@ public class SimpleProjectComparator implements Comparator<Project> {
          */
 
         return 0;
+    }
+
+
+
+    /*
+     * Internal utils
+     */
+
+    private int getProjectScoreEvaluation(Project project) {
+        return project.getScore()/project.getSkillRequiredList()*project.
     }
 
 }

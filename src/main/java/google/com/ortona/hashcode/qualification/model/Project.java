@@ -1,5 +1,7 @@
 package google.com.ortona.hashcode.qualification.model;
 
+import google.com.ortona.hashcode.qualification.logic.ProblemSolver;
+
 import java.util.List;
 
 public class Project {
@@ -10,20 +12,20 @@ public class Project {
 
     private int bestBeforeDay;
 
+    private int duration;
+
     private int score;
 
     private List<Person> contributorList;
 
     private Integer startDay = null;
 
-
-    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay, int score, List<Person> contributorList, int startDay) {
+    public Project(String name, List<Skill> skillRequiredList, int bestBeforeDay, int duration, int score) {
         this.name = name;
         this.skillRequiredList = skillRequiredList;
         this.bestBeforeDay = bestBeforeDay;
+        this.duration = duration;
         this.score = score;
-        this.contributorList = contributorList;
-        this.startDay = startDay;
     }
 
 
@@ -36,6 +38,10 @@ public class Project {
             return 0;
         }
         return 0;
+    }
+
+    public boolean isCritical(int currentTime) {
+        return currentTime + ProblemSolver.PROJECT_TIME_BUFFER >= bestBeforeDay;
     }
 
     // ------
@@ -89,12 +95,25 @@ public class Project {
         this.score = score;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setStartDay(Integer startDay) {
+        this.startDay = startDay;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
                 "name='" + name + '\'' +
                 ", skillRequiredList=" + skillRequiredList +
                 ", bestBeforeDay=" + bestBeforeDay +
+                ", duration=" + duration +
                 ", score=" + score +
                 ", contributorList=" + contributorList +
                 ", startDay=" + startDay +
