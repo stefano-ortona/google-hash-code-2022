@@ -6,56 +6,62 @@ import java.util.Map;
 
 public class Person {
 
-    private String name;
+	private String name;
 
-    private List<Skill> skillList;
+	private List<Skill> skillList;
 
-    private int nextAvailableTime = 0;
-    private Map<String, Skill> name2skill = new HashMap<>();
+	private int nextAvailableTime = 0;
+	private Map<String, Skill> name2skill = new HashMap<>();
 
 
-    public Person(String name, List<Skill> skillList) {
-        this.name = name;
-        this.skillList = skillList;
-        for(Skill oneS:skillList) {
-        	name2skill.put(oneS.getName(), oneS);
-        }
-    }
+	public Person(String name, List<Skill> skillList) {
+		this.name = name;
+		this.skillList = skillList;
+		this.reorder();
 
-    public String getName() {
-        return name;
-    }
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void reorder() {
+		for(Skill oneS:skillList) {
+			name2skill.put(oneS.getName(), oneS);
+		}
 
-    public List<Skill> getSkillList() {
-        return skillList;
-    }
+	}
 
-    public void setSkillList(List<Skill> skillList) {
-        this.skillList = skillList;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public int getNextAvailableTime() {
-        return nextAvailableTime;
-    }
-    
-    public Skill getSkillByName(String name) {
-    	return this.name2skill.get(name);
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setNextAvailableTime(int nextAvailableTime) {
-        this.nextAvailableTime = nextAvailableTime;
-    }
+	public List<Skill> getSkillList() {
+		return skillList;
+	}
 
-    @Override
-    public String toString() {
-        return "People{" +
-                "name='" + name + '\'' +
-                ", skillList=" + skillList +
-                ", nextAvailableTime=" + nextAvailableTime +
-                '}';
-    }
+	public void setSkillList(List<Skill> skillList) {
+		this.skillList = skillList;
+	}
+
+	public int getNextAvailableTime() {
+		return nextAvailableTime;
+	}
+
+	public Skill getSkillByName(String name) {
+		return this.name2skill.getOrDefault(name, new Skill(name,0));
+	}
+
+	public void setNextAvailableTime(int nextAvailableTime) {
+		this.nextAvailableTime = nextAvailableTime;
+	}
+
+	@Override
+	public String toString() {
+		return "People{" +
+				"name='" + name + '\'' +
+				", skillList=" + skillList +
+				", nextAvailableTime=" + nextAvailableTime +
+				'}';
+	}
 }

@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import google.com.ortona.hashcode.qualification.model.SolutionContainer;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class ProblemSolver {
 
     public SolutionContainer solve(ProblemContainer pC) {
         SolutionContainer sC = new SolutionContainer();
+        sC.SOLUTION_PROJECT_LIST = new ArrayList<>();
 
         // fino alla fine dei problemi
 
@@ -34,7 +36,10 @@ public class ProblemSolver {
 			PROJECT_SORTER.sortProject(pC.PROJECT_LIST);
 
 			for (Project project : pC.PROJECT_LIST) {
-				PROJECT_ASSIGNER.assignToProject(project, pC.SKILL_2_PEOPLE_MAP, t);
+				boolean canAssign = PROJECT_ASSIGNER.assignToProject(project, pC.SKILL_2_PEOPLE_MAP, t,pC.PERSON_LIST);
+				if(canAssign) {
+					sC.SOLUTION_PROJECT_LIST.add(project);
+				}
 			}
 
 			t++;
@@ -56,12 +61,13 @@ public class ProblemSolver {
 
             // if already assigned
             if (project.getStartDay() != null) {
-                projectList.remove(project);
+                it.remove();
+                continue;
             }
 
             // if no value
             if (project.getScoreByCurrentTime(currentTime) <= 0) {
-                projectList.remove(project);
+                it.remove();
             }
         }
 	}

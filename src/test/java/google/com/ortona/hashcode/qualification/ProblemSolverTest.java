@@ -1,6 +1,7 @@
 package google.com.ortona.hashcode.qualification;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ProblemSolverTest {
 	public void firstTest() throws IOException {
 		LOG.info("----------------------");
 		LOG.info("First test is starting");
-		
+
 		final Person anna = new Person("Anna", Arrays.asList(new Skill("C++", 2)));
 		final Person bob = new Person("Bob", Arrays.asList(new Skill("HTML",5), new Skill("CSS", 5)));
 		final Person maria = new Person("Maria", Arrays.asList(new Skill("Python", 3)));
@@ -42,7 +43,10 @@ public class ProblemSolverTest {
 		final Project p2 = new Project("WebChat", Arrays.asList(new Skill("Python", 3), new Skill("HTML", 3)), 20, 10, 20);
 		final ProblemContainer p = new ProblemContainer();
 		p.PERSON_LIST = Arrays.asList(anna, bob, maria);
-		p.PROJECT_LIST = Arrays.asList(p0, p1, p2);
+		p.PROJECT_LIST = new ArrayList<>();
+		p.PROJECT_LIST.add(p1);
+		p.PROJECT_LIST.add(p2);
+		p.PROJECT_LIST.add(p0);
 		p.SKILL_2_PEOPLE_MAP = new HashMap<String, List<Person>>();
 		p.SKILL_2_PEOPLE_MAP.put("C++", Arrays.asList(anna));
 		p.SKILL_2_PEOPLE_MAP.put("HTML", Arrays.asList(bob));
@@ -58,12 +62,12 @@ public class ProblemSolverTest {
 
 	@Test
 	public void testFirstInput() throws IOException {
-		//		final String inputFile = "a_example.txt";
-		//		final String inputFile = "b_read_on.txt";
-		//final String inputFile = "c_incunabula.txt";
-		final String inputFile = "d_tough_choices.txt";
-		//		final String inputFile = "e_so_many_books.txt";
-		//final String inputFile = "f_libraries_of_the_world.txt";
+		//				final String inputFile = "a_an_example.in.txt";
+//		final String inputFile = "b_better_start_small.in.txt";
+		final String inputFile = "c_collaboration.in.txt";
+		//		final String inputFile = "d_dense_schedule.in.txt";
+		//		final String inputFile = "e_exceptional_skills.in.txt";
+		//final String inputFile = "f_find_great_mentors.in.txt";
 
 		final ProblemContainer p = READER.readProblem(inputFile);
 

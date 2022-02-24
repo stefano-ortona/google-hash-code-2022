@@ -17,7 +17,7 @@ public class Project {
 
     private int score;
 
-    private Map<String,Person> contributorList;
+    private Map<Integer,Person> contributorList;
 
     private Integer startDay = null;
 
@@ -27,6 +27,9 @@ public class Project {
         this.bestBeforeDay = bestBeforeDay;
         this.duration = duration;
         this.score = score;
+        for(int i = 0; i<skillRequiredList.size();i++) {
+        	skillRequiredList.get(i).setIndex(i);
+        }
     }
 
 
@@ -82,11 +85,11 @@ public class Project {
         this.bestBeforeDay = bestBeforeDay;
     }
 
-    public Map<String,Person> getContributorList() {
+    public Map<Integer,Person> getContributorList() {
         return contributorList;
     }
 
-    public void setContributorList(Map<String,Person> contributorList) {
+    public void setContributorList(Map<Integer,Person> contributorList) {
         this.contributorList = contributorList;
     }
 

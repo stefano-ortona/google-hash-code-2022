@@ -54,11 +54,12 @@ public class ProblemReader {
 		int score = Integer.parseInt(line[2]);
 		int bestBeforeDay = Integer.parseInt(line[3]);
 		int roles = Integer.parseInt(line[4]);
-		Project pr = new Project(name, new ArrayList<>(), bestBeforeDay, duration, score);
+		List<Skill> allSkills = new ArrayList<>();
 		for(int i = 0; i < roles; i++) {
 			String []oneL = br.readLine().split(" ");
-			pr.getSkillRequiredList().add(new Skill(oneL[0], Integer.parseInt(oneL[1])));
+			allSkills.add(new Skill(oneL[0], Integer.parseInt(oneL[1])));
 		}
+		Project pr = new Project(name, allSkills, bestBeforeDay, duration, score);
 		return pr;
 	}
 
@@ -78,6 +79,7 @@ public class ProblemReader {
 			}
 			skill2people.get(skill).add(p);
 		}
+		p.reorder();
 		return p;
 	}
 
