@@ -63,11 +63,11 @@ public class ProblemSolverTest {
 	@Test
 	public void testFirstInput() throws IOException {
 		//				final String inputFile = "a_an_example.in.txt";
-//		final String inputFile = "b_better_start_small.in.txt";
-		final String inputFile = "c_collaboration.in.txt";
-		//		final String inputFile = "d_dense_schedule.in.txt";
+		//		final String inputFile = "b_better_start_small.in.txt";
+		//		final String inputFile = "c_collaboration.in.txt";
+		final String inputFile = "d_dense_schedule.in.txt";
 		//		final String inputFile = "e_exceptional_skills.in.txt";
-		//final String inputFile = "f_find_great_mentors.in.txt";
+		//		final String inputFile = "f_find_great_mentors.in.txt";
 
 		final ProblemContainer p = READER.readProblem(inputFile);
 

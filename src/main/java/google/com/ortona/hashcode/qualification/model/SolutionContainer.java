@@ -13,10 +13,12 @@ public class SolutionContainer {
 	}
 
 	public int getScore() {
+		int score = 0;
 		for (Project project : SOLUTION_PROJECT_LIST) {
+			score += project.getFinalScore();
 
 		}
-		return 0;
+		return score;
 	}
 
 	@Override
