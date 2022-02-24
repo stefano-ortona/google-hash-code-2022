@@ -11,7 +11,7 @@ public class ProblemContainer {
     public List<Project> PROJECT_LIST = new ArrayList<>();
     public List<Person> PERSON_LIST = new ArrayList<>();
 
-    public Map<String, Person> SKILL_2_PEOPLE_MAP = new HashMap<>();
+    public Map<String, List<Person>> SKILL_2_PEOPLE_MAP = new HashMap<>();
 
 
     public ProblemContainer() {
