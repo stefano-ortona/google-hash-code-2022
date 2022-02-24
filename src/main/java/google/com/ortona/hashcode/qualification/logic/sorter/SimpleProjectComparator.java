@@ -21,9 +21,11 @@ public class SimpleProjectComparator implements Comparator<Project> {
             else return 1;
         }
 
-        int result = getProjectScoreEvaluation(p1) - getProjectScoreEvaluation(p2);
+        if (p1.isCritical(currentTime)) { // && p2 iss critical
+            return getProjectScoreEvaluation(p2) - getProjectScoreEvaluation(p1);
+        }
 
-        return result;
+        return p1.getSkillRequiredList().size() - p2.getSkillRequiredList().size();
     }
 
 
@@ -33,7 +35,7 @@ public class SimpleProjectComparator implements Comparator<Project> {
      */
 
     private int getProjectScoreEvaluation(Project project) {
-        return project.getScore() / project.getSkillRequiredList().size() * project.getDuration();
+        return project.getScore(); // / project.getSkillRequiredList().size() * project.getDuration();
     }
 
 }
