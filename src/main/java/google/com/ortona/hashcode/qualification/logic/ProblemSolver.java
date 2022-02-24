@@ -46,7 +46,7 @@ public class ProblemSolver {
      */
 
     private void removeImpossibleProjects(List<Project> projectList) {
-
+		// rimuove anche i progetti già assegnati
 	}
 
 
