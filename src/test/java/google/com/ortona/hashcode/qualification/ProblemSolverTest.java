@@ -27,6 +27,7 @@ public class ProblemSolverTest {
 	public void firstTest() throws IOException {
 		LOG.info("----------------------");
 		LOG.info("First test is starting");
+		
 		final ProblemContainer p = READER.readProblem("a.txt");
 		LOG.info(p.toString());
 		final SolutionContainer solution = SOLVER.solve(p);
