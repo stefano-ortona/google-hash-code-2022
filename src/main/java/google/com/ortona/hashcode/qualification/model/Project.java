@@ -3,6 +3,7 @@ package google.com.ortona.hashcode.qualification.model;
 import google.com.ortona.hashcode.qualification.logic.ProblemSolver;
 
 import java.util.List;
+import java.util.Map;
 
 public class Project {
 
@@ -16,7 +17,7 @@ public class Project {
 
     private int score;
 
-    private List<Person> contributorList;
+    private Map<String,Person> contributorList;
 
     private Integer startDay = null;
 
@@ -81,11 +82,11 @@ public class Project {
         this.bestBeforeDay = bestBeforeDay;
     }
 
-    public List<Person> getContributorList() {
+    public Map<String,Person> getContributorList() {
         return contributorList;
     }
 
-    public void setContributorList(List<Person> contributorList) {
+    public void setContributorList(Map<String,Person> contributorList) {
         this.contributorList = contributorList;
     }
 

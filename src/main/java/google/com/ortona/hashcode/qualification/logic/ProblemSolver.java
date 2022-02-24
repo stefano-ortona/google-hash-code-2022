@@ -34,7 +34,7 @@ public class ProblemSolver {
 			PROJECT_SORTER.sortProject(pC.PROJECT_LIST);
 
 			for (Project project : pC.PROJECT_LIST) {
-				PROJECT_ASSIGNER.assignToProject(project, pC.SKILL_2_PEOPLE_MAP);
+				PROJECT_ASSIGNER.assignToProject(project, pC.SKILL_2_PEOPLE_MAP, t);
 			}
 
 			t++;

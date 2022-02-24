@@ -9,16 +9,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import google.com.ortona.hashcode.qualification.model.Person;
 import google.com.ortona.hashcode.qualification.model.ProblemContainer;
 import google.com.ortona.hashcode.qualification.model.Project;
 import google.com.ortona.hashcode.qualification.model.Skill;
 
 public class ProblemReader {	
-	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
 
 	public ProblemContainer readProblem(String fileLocation) throws IOException {
@@ -44,7 +40,7 @@ public class ProblemReader {
 		}
 		br.close();
 		pC.PROJECT_LIST = allProjects;
-		pC.Person_LIST = allPeople;
+		pC.PERSON_LIST = allPeople;
 		pC.SKILL_2_PEOPLE_MAP = skill2people;
 
 		return pC;
@@ -59,7 +55,11 @@ public class ProblemReader {
 		int bestBeforeDay = Integer.parseInt(line[3]);
 		int roles = Integer.parseInt(line[4]);
 		Project pr = new Project(name, new ArrayList<>(), bestBeforeDay, duration, score);
-		return null;
+		for(int i = 0; i < roles; i++) {
+			String []oneL = br.readLine().split(" ");
+			pr.getSkillRequiredList().add(new Skill(oneL[0], Integer.parseInt(oneL[1])));
+		}
+		return pr;
 	}
 
 
