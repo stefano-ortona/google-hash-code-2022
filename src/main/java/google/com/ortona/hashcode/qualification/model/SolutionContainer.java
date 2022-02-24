@@ -12,6 +12,6 @@ public class SolutionContainer {
 
 	@Override
 	public String toString() {
-		return "";
+		return "__";
 	}
 }
