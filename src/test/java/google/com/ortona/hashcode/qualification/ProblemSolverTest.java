@@ -37,9 +37,9 @@ public class ProblemSolverTest {
 		final Person anna = new Person("Anna", Arrays.asList(new Skill("C++", 2)));
 		final Person bob = new Person("Bob", Arrays.asList(new Skill("HTML",5), new Skill("CSS", 5)));
 		final Person maria = new Person("Maria", Arrays.asList(new Skill("Python", 3)));
-		final Project p0 = new Project("Logging", Arrays.asList(new Skill("C++", 3)), 5, 10, 5);
-		final Project p1 = new Project("WebServer", Arrays.asList(new Skill("HTML", 3), new Skill("C++", 2)), 7, 10, 7);
-		final Project p2 = new Project("WebChat", Arrays.asList(new Skill("Python", 3), new Skill("HTML", 3)), 20, 20, 10);
+		final Project p0 = new Project("Logging", Arrays.asList(new Skill("C++", 3)), 5, 5, 10);
+		final Project p1 = new Project("WebServer", Arrays.asList(new Skill("HTML", 3), new Skill("C++", 2)), 7, 7, 10);
+		final Project p2 = new Project("WebChat", Arrays.asList(new Skill("Python", 3), new Skill("HTML", 3)), 20, 10, 20);
 		final ProblemContainer p = new ProblemContainer();
 		p.PERSON_LIST = Arrays.asList(anna, bob, maria);
 		p.PROJECT_LIST = Arrays.asList(p0, p1, p2);
