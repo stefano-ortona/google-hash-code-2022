@@ -39,7 +39,7 @@ public class SimpleProjectComparator implements Comparator<Project> {
      */
 
     private int getProjectScoreEvaluation(Project project) {
-        return project.getScore()/project.getSkillRequiredList()*project.
+        return project.getScore()/project.getSkillRequiredList().size()*project.getDuration();
     }
 
 }
