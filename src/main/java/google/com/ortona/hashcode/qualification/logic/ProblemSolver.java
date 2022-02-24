@@ -29,7 +29,7 @@ public class ProblemSolver {
 
 		int t = 0;
         while (!pC.PROJECT_LIST.isEmpty()) {
-        	removeImpossibleProjects(pC.PROJECT_LIST);
+        	removeImpossibleProjects(t, pC.PROJECT_LIST);
 
 			PROJECT_SORTER.sortProject(pC.PROJECT_LIST);
 
@@ -48,7 +48,7 @@ public class ProblemSolver {
      * Internal methods
      */
 
-    private void removeImpossibleProjects(List<Project> projectList) {
+    private void removeImpossibleProjects(int currentTime, List<Project> projectList) {
 		// rimuove anche i progetti già assegnati
         Iterator<Project> it = projectList.iterator();
         while (it.hasNext()) {
@@ -60,7 +60,9 @@ public class ProblemSolver {
             }
 
             // if no value
-            if (project.getBestBeforeDay())
+            if (project.getScoreByCurrentTime(currentTime) <= 0) {
+                projectList.remove(project);
+            }
         }
 	}
 
