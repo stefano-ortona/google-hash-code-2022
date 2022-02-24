@@ -1,6 +1,8 @@
 package google.com.ortona.hashcode.qualification.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Person {
 
@@ -9,11 +11,15 @@ public class Person {
     private List<Skill> skillList;
 
     private int nextAvailableTime = 0;
+    private Map<String, Skill> name2skill = new HashMap<>();
 
 
     public Person(String name, List<Skill> skillList) {
         this.name = name;
         this.skillList = skillList;
+        for(Skill oneS:skillList) {
+        	name2skill.put(oneS.getName(), oneS);
+        }
     }
 
     public String getName() {
@@ -34,6 +40,10 @@ public class Person {
 
     public int getNextAvailableTime() {
         return nextAvailableTime;
+    }
+    
+    public Skill getSkillByName(String name) {
+    	return this.name2skill.get(name);
     }
 
     public void setNextAvailableTime(int nextAvailableTime) {
