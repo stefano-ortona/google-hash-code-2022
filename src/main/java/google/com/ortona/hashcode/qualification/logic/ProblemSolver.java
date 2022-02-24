@@ -30,7 +30,9 @@ public class ProblemSolver {
         // fino alla fine dei problemi
 
 		int t = 0;
+		int total = pC.PROJECT_LIST.size();
         while (!pC.PROJECT_LIST.isEmpty()) {
+        	LOG.info("{} Remaining projects out of {} initials",pC.PROJECT_LIST.size(),total);
         	removeImpossibleProjects(t, pC.PROJECT_LIST);
 
 			PROJECT_SORTER.sortProject(pC.PROJECT_LIST);
